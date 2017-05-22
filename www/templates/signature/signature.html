@@ -1,0 +1,91 @@
+<ion-view view-title="Signature" class="backgroundImage">
+	<ion-header-bar class="headerLogo" align-title="center">
+		<div class="title">
+			<img src="img/Auth0_logo.svg"/>
+		</div>
+	</ion-header-bar>
+	<ion-content has-bouncing="false" overflow-scroll="false" class="signatureContent ionContentMargin">
+		<div class="signatureLabelDiv">
+			<label class="signatureLabelTitle">Auth0-login {{signature.name}}</label>
+		</div>
+
+		<div class="row rowPadding">
+			<div class="col">
+				<div class="divContent">
+					<div class="list">
+
+						<div class="item item-input-inset" ng-if="signature.notificationItem.requestInfo.primaryAddress!=null">
+							<i class="signatureIcons link"></i>
+							<label class="item item-input item-stacked-label signatureInput">
+								<span class="input-label">Primary Address</span>
+								<input type="text" ng-model="signature.notificationItem.requestInfo.primaryAddress" ng-click="signature.inputPopup('Primary Address',signature.notificationItem.requestInfo.primaryAddress)" placeholder="Primary Address" readonly>
+							</label>
+						</div>
+
+						<div class="item item-input-inset">
+							<i class="signatureIcons link"></i>
+							<label class="item item-input item-stacked-label signatureInput">
+								<span class="input-label">Secondary Address</span>
+								<input type="text" ng-model="signature.notificationItem.requestInfo.secondaryAddress" on-touch="signature.inputPopup('Secondary Address',signature.notificationItem.requestInfo.secondaryAddress)" placeholder="Secondary Address" readonly>
+							</label>
+						</div>
+
+						<div class="item item-input-inset" ng-if="signature.notificationItem.requestInfo.email!=null">
+							<i class="signatureIcons pc"></i>
+							<label class="item item-input item-stacked-label signatureInput">
+								<span class="input-label">Email</span>
+								<input type="text" ng-model="signature.notificationItem.requestInfo.email" on-touch="signature.inputPopup('Email',signature.notificationItem.requestInfo.email)" placeholder="Email" readonly>
+							</label>
+						</div>
+
+						<div class="item item-input-inset">
+							<i class="signatureIcons pc"></i>
+							<label class="item item-input item-stacked-label signatureInput">
+								<span class="input-label">Ip</span>
+								<input type="text" ng-model="signature.notificationItem.requestInfo.ip" on-touch="signature.inputPopup('IP',signature.notificationItem.requestInfo.ip)" placeholder="Ip" readonly>
+							</label>
+						</div>
+
+						<div class="item item-input-inset" ng-if="signature.notificationItem.requestInfo.website!=null">
+							<i class="signatureIcons pc"></i>
+							<label class="item item-input item-stacked-label signatureInput">
+								<span class="input-label">Website</span>
+								<input type="text" ng-model="signature.notificationItem.requestInfo.website" on-touch="signature.inputPopup('Website',signature.notificationItem.requestInfo.website)" placeholder="Website" readonly>
+							</label>
+						</div>
+
+						<div class="item item-input-inset" ng-if="signature.notificationItem.requestInfo.browser!=null">
+							<i class="signatureIcons pc"></i>
+							<label class="item item-input item-stacked-label signatureInput">
+								<span class="input-label">Browser</span>
+								<input type="text" ng-model="signature.notificationItem.requestInfo.browser" on-touch="signature.inputPopup('Browser',signature.notificationItem.requestInfo.browser)" placeholder="Browser" readonly>
+							</label>
+						</div>
+
+						<div class="item item-input-inset">
+							<i class="signatureIcons location"></i>
+							<label class="item item-input item-stacked-label signatureInput">
+								<span class="input-label">City</span>
+								<input type="text" ng-model="signature.notificationItem.requestInfo.city" on-touch="signature.inputPopup('City',signature.notificationItem.requestInfo.city)" placeholder="City" readonly>
+							</label>
+						</div>
+
+						<div class="item item-input-inset">
+							<i class="signatureIcons time"></i>
+							<label class="item item-input item-stacked-label signatureInput">
+								<span class="input-label">Time</span>
+								<input type="text" ng-model="signature.notificationItem.requestInfo.timestamp" on-touch="signature.inputPopup('Time',signature.notificationItem.requestInfo.timestamp)" placeholder="Time" readonly>
+							</label>
+						</div>
+					</div>
+					<div class="row rowWithoutPadding">
+						<button type="button" class="col col-50 no-radius button button-stable signatureButton deny" ng-click="signature.reject()">Deny</button>
+						<button type="button" class="col col-50 no-radius button button-stable signatureButton sign" ng-click="signature.patternPopup()">Sign</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

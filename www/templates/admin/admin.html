@@ -1,0 +1,51 @@
+<ion-view view-title="admin" class="backgroundImage">
+	<ion-header-bar class="headerLogo" align-title="center">
+		<div class="title">
+			<img src="img/Auth0_logo.svg"/>
+		</div>
+		<div class="buttons">
+			<i class="ion-android-more-vertical dropDownIcon" ng-click="admin.openPopover($event)"></i>
+		</div>
+	</ion-header-bar>
+	<ion-content has-bouncing="false" overflow-scroll="false" class="ionContentMargin">
+
+		<ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+			<ion-tab title="ETHEREUM ADDRESS">
+				<div class="tabsContent">
+					<div class="adminLabelDiv">
+						<label class="adminLabelTitle">Auth0-login {{admin.name}}</label>
+					</div>
+					<div class="list">
+						<div class="row rowPadding">
+							<div class="col">
+								<div class="item item-input-inset adminInput">
+									<i class="signatureIcons link"></i>
+									<label class="item item-input item-stacked-label signatureInput">
+										<span class="input-label">Secondary Address</span>
+										<input type="text" ng-model="admin.localKey.address" placeholder="Secondary Address" on-touch="admin.inputPopup()" readonly>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ion-tab>
+
+			<ion-tab title="SUCCESSFUL LOGINS">
+				<div class="tabsContent">
+					<div class="adminLabelDiv">
+						<label class="adminLabelTitle">Logs</label>
+					</div>
+					<div class="list adminList">
+						<div class="card" ng-repeat="login in admin.logins">
+							<div class="item item-text-wrap item-icon-left cardItem">
+								<i class="icon signatureIcons cardTime"></i> {{login.id}}# {{login.date | date:'dd-MM-yyyy HH:mm:ss'}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</ion-tab>
+
+		</ion-tabs>
+	</ion-content>
+</ion-view>

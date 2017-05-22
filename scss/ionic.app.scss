@@ -1,0 +1,583 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+@font-face {
+    font-family: 'roboto'; /*a name to be used later*/
+    src: url(../fonts/Roboto-Regular.ttf); /*URL to font*/
+}
+
+
+/* Body */
+
+body {
+	font-family: "roboto";
+}
+
+.scroll {
+    height: 100%;
+}
+
+.generalFontSize {
+	font-size: 16px;
+}
+
+.backgroundImage {
+	background-image: url(../img/background.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.fade-in {
+  -webkit-transform: scale(0.0);
+  transform: scale(0.0);
+  opacity: 0;
+}
+.fade-in.ng-enter, .fade-in > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 250ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 250ms;
+}
+.fade-in.ng-enter-active,
+.fade-in > .ng-enter-active {
+  -webkit-transform: scale(1.0);
+  transform: scale(1.0);
+  opacity: 1;
+}
+
+.fade-in.ng-leave, .fade-in > .ng-leave {
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms;
+}
+
+.ionContentMargin {
+	margin-top: 35px !important;
+}
+
+/* header */
+.bar-header {
+    top: 15px;
+}
+.has-header {
+    top: 25px;
+}
+.headerLogo {
+	background-color: transparent!important;
+}
+
+.bar {
+	background-size: 100% 0px;
+}
+
+
+/*  mixins to create columns  */
+@mixin justify-content($pack: start) {
+	-webkit-box-pack: $pack;
+	-webkit-justify-content: $pack;
+	justify-content: $pack;
+}
+
+@mixin col($width) {
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 $width;
+	-moz-box-flex: 0;
+	-moz-flex: 0 0 $width;
+	-ms-flex: 0 0 $width;
+	flex: 0 0 $width;
+	max-width: $width;
+}
+
+/*  Signature  */
+.signatureContent{
+	background-color: rgb(249,249,249);
+	top: 25px;
+}
+
+.signatureIcons{
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    background-position: center;
+	background-repeat: no-repeat;
+    margin-left: 10px;
+    margin-right: 10px;
+	&.link{
+		background-image: url(../img/link_icon.png);
+	}
+	&.location{
+		background-image: url(../img/location_icon.png);
+		background-size: contain;
+	}
+	&.pc{
+		background-image: url(../img/pc_icon.png);
+	}
+	&.time{
+		background-image: url(../img/time_icon.png);
+	}
+	&.cardTime{
+		background-image: url(../img/time_icon.png);
+		top: 30px;
+		width: 20px;
+    	height: 20px;
+	}
+}
+
+.signatureLabelDiv{
+	margin: 10px 0 0 20px;
+	text-transform: uppercase;
+}
+
+.signatureLabelTitle{
+	color: #969696;
+	opacity: 0.5;
+	font-weight: 400;
+	margin: 15px 0 0 5px;
+	font-size: 12px;
+}
+
+.signatureButton{
+	padding: 20px;
+	border-radius: 0;
+	&.sign{
+		background-color: rgb(64,223,125);
+		border-bottom-right-radius: 4px;
+		color: white;
+		border-color: rgb(64,223,125);
+	}
+	&.deny{
+		border-bottom-left-radius: 4px;
+		color: gray;
+		border-color: #f8f8f8;
+	}
+}
+
+.signatureButton.activated{
+	border-color: transparent !important;
+	&.sign{
+		background-color: rgb(64,223,120);
+		color: white;
+	}
+}
+
+.signatureButton:hover{
+	&.sign{
+		background-color: rgb(64,223,120);
+		color: white;
+	}
+}
+
+.divContent {
+	background-color: white;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	 border-radius: 4px;
+}
+
+
+/*  ADMIN  */
+.adminLabelDiv{
+	padding: 10px 0 0 15px;
+	text-transform: uppercase;
+}
+.adminLabelTitle{
+	color: rgb(199,199,199);
+	font-weight: 400;
+	margin: 15px 0 0 5px;
+	font-size: 12px;
+}
+
+.tabs-top.tabs-striped {
+    padding-bottom: 0;
+	height: 49px;
+}
+
+.tabs-striped.tabs-background-positive .tabs {
+    background-color: transparent;
+}
+
+.tabs-top > .tabs, .tabs.tabs-top {
+    top: 0px;
+}
+
+.tabs-background-positive .tabs, .tabs-background-positive > .tabs {
+    border-color: transparent;
+}
+
+.tab-item {
+    max-width: 100%;
+}
+
+.tabsContent{
+	background-color: rgb(249,249,249);
+	height: 100%;
+	top: 49px;
+	overflow: visible;
+}
+
+.rowPadding{
+	padding: 5px 15px 15px 15px;
+}
+
+.rowWithoutPadding{
+	padding: 0;
+}
+
+.cardItem{
+	padding: 30px 30px 30px 66px;
+}
+.card {
+    margin: 10px 20px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.dropDownIcon{
+	color: white;
+    font-size: 30px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    width: 25px;
+    text-align: center;
+}
+
+.popoverContent{
+	margin-top: 0px !important;
+}
+.popover {
+    height: 165px;
+}
+.popover .item {
+    border-color: #fff !important;
+    background-color: #fff !important;
+    color: #4d4d4d;
+}
+
+/*  Item list  */
+.list {
+    margin-bottom: 0px;
+}
+
+.adminList {
+	background-color: #f9f9f9;
+}
+
+.item {
+	margin: 1px 0 -1px 0;
+	
+}
+
+/*  Common inputs   */
+.item-input-inset {
+	border-bottom: 2px solid rgb(239,240,240);
+	border-left: 0px solid white;
+	border-right: 0px solid white;
+	border-top: 0px solid white;
+	&.adminInput{
+		border-bottom: 0px solid rgb(239,240,240);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+		border-radius: 4px;
+	}
+}
+
+.item-stacked-label {
+	display: block;
+	box-shadow: none;
+	border-radius: 0px;
+	border-bottom: 1px solid white;
+	border-left: 0px solid white;
+	border-right: 0px solid white;
+	border-top: 0px solid white;
+	max-width: 70%;
+}
+
+.divContent-register{
+	position: relative;
+	margin-top: 33.3%;
+	top: -60px;
+/*	position: relative;
+    margin-top: -120px;
+    top: 33.3%;*/
+}
+
+input[readonly]:not(.cloned-text-input) {
+    background-color: transparent;
+	font-weight: 400;
+	font-size: 20px;
+	white-space: nowrap !important;
+  	overflow: hidden !important;
+  	text-overflow: ellipsis !important;
+
+}
+
+
+
+.inputPopupLabel{
+	color: #919194;
+	font-weight: 500;
+}
+
+.input-label {
+    color: rgb(145,145,148);
+  	font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+/*  Register  */
+.inputEmail{
+	font-weight: 100;
+	height: 25px !important;
+	background-color: transparent !important;
+	color: white !important;
+}
+.inputEmail::-webkit-input-placeholder {
+	/* WebKit, Blink, Edge */
+	color: white;
+}
+
+.inputEmail:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: white;
+	opacity: 1;
+}
+
+.inputEmail::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: white;
+	opacity: 1;
+}
+
+.inputEmail:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: white;
+}
+.registerItem{
+	padding: 6px 0 5px 0px;
+	
+}
+/*  pattern lock  */
+.patt-holder {
+	background: transparent !important;
+	-ms-touch-action: none;
+}
+.patt-circ.hovered {
+    border: 3px solid rgb(124,129,175) !important;
+}
+.patt-dots {
+    background: #FFF;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+.patt-wrap {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+.patt-lines {
+    background: rgba(84,92,136,.9) !important;
+}
+.patt-lines:after {
+   	display: inline-block;
+    margin: 0 0 9px 0px;
+    height: 2px;
+    content: " ";
+    text-shadow: none;
+    background-color: white;
+    width: 100%;
+}
+
+#patternContainerSignature .patt-dots {
+    background: rgb(47,60,98);
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+
+#patternContainerSignature .patt-lines {
+    background: rgba(84,92,136,.5) !important;
+}
+
+/*  pattern lock refresh button   */
+.refresh{
+	position: absolute;
+    right: 50%;
+	margin-right: -10px;
+    z-index: 100;
+    font-size: 20px;
+    bottom: 75px;
+    float: right;
+    color: white;
+	&.refreshPopup{
+		color: rgb(47,60,98);
+		background-color: transparent;
+		position: absolute;
+		right: 50%;
+		margin-right: -30px !important;
+		bottom: 70px;
+		border-color:transparent;
+	}
+}
+
+.btnRegister {
+	background-color: rgb(249,249,249) ;
+	position: relative;
+    top: -6px;
+    border: 0;
+    transition: all 40ms linear;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    width: 40%;
+    border-radius: 40px;
+    max-width: 40%;
+	&.no-radius {
+		border-radius: 0;
+	}
+}
+
+/*  Popup   */
+.popup-container .popup {
+    width: 300px;
+	background-color: white;
+	border-radius: 4px;
+}
+
+.signPopup .popup-head {
+  display: none;
+}
+.signPopup .popup-buttons {
+    padding: 0px;
+}
+.adminPopup .popup-buttons {
+    padding: 0px;
+}
+.popup-buttons .button {
+    margin-right: 0px;
+}
+.popupDiv{
+	//text-align: center;
+    padding: 0px 15px;
+}
+.inputPopup .popup-head {
+    padding: 30px 10px 10px 10px;
+    border-bottom: 0px solid #eee; 
+    text-align:left;
+    margin-left: 15px;
+}
+.popup-title {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.button.button-positive.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: rgb(53,68,106);
+	font-weight: 600;
+    font-size: 15px;
+}
+
+/*  positions  */
+
+/*  About  */
+.aboutContent{
+	height: 70px;
+}
+.aboutRow{
+	margin-top: 5%;
+}
+
+.gftLogo{
+    height: 35px;
+    background-image: url(../img/GFT_logo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 97%;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.auth0Logo{ 
+    height: 35px;
+    background-image: url(../img/auth_Logo_Blue.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 60% 0%;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row-center .ok {
+	background-image: url(../img/ok.png);
+    position: absolute;
+    left: 40%;
+    right: 0;
+    margin: 0 auto;
+    top: 44%;
+    transform: translateY(-55%);
+    height: 77px;
+    background-repeat: no-repeat;
+}
+.row-center p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 51%;
+    transform: translateY(-45%);
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+.row-center .subInfo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* platform IOS*/
+
+.platform-ios {}
+
+
+/* platform Android*/
+
+.platform-android {}

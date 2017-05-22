@@ -1,0 +1,27 @@
+<ion-view view-title="register" class="backgroundImage" cache-view="false">
+	<ion-header-bar class="headerLogo" align-title="center">
+		<div class="title">
+			<img src="img/Auth0_logo.svg"/>
+		</div>
+	</ion-header-bar>
+	<ion-content has-bouncing="true" overflow-scroll="false" scroll="false">
+		<div class="divContent-register">
+			<form name="register.createAccountForm" novalidate>
+				<div class="list">
+					<div class="row">
+						<div class="col">
+							<label class="item item-input item-stacked-label center registerItem">
+								<input ng-model="register.email" class="inputEmail" type="email" placeholder="Email" ng-pattern="/^[_a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-z]{2,})$/" required>
+							</label>
+							<i class="ion-refresh refresh" ng-if="register.sucessPatternLock == false" ng-click="register.resertPattern()"></i>
+							<div class="center" id="patternContainerRegister"></div>
+							<div class="row">
+								<button type="button" class="btnRegister btn btn-lg center" ng-click="register.registerAccount(register.email)"><span class="glyphicon glyphicon-download-alt"></span>Register</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>

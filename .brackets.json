@@ -1,0 +1,12 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Users/ddbn/Desktop/myApp/platforms/android/cordova/lib/log.js",
+        "C:/Users/ddbn/Desktop/myApp/www/js/modules/admin/admin-controller.js",
+        "C:/Users/ddbn/Desktop/auth0-login-mobile/www/js/modules/common/bundle.js",
+        "C:/Users/ddbn/Desktop/auth0-login-mobile/www/js/modules/common/registerPushNotifications-service.js",
+        "C:/Users/ddbn/Desktop/auth0-login-mobile/www/js/modules/common/notifications-factory.js",
+        "C:/Users/ddbn/Desktop/auth0-login-mobile/www/js/app.js",
+        "C:/Users/ddbn/Desktop/auth0-login-mobile/www/js/modules/register/register-controller.js",
+        "C:/Users/ddbn/Desktop/ethereum-authenticator-app/www/js/modules/signature/signature-controller.js"
+    ]
+}

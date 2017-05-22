@@ -1,0 +1,15 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.3.1"
+  },
+  "dependencies": {
+    "ngstorage": "^0.3.11",
+    "lodash": "^4.16.4",
+    "ngCordova": "^0.1.27-alpha",
+    "angular-moment": "^1.0.0",
+    "jquery": "3.1.1",
+    "angularfire": "^2.1.0"
+  }
+}
